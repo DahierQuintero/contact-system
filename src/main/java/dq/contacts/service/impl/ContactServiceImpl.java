@@ -18,10 +18,10 @@ public class ContactServiceImpl implements IContactService {
     private IContactRepository iContactRepository;
 
     @Override
-    public List<ContactDetailDTO> listContacts() {
+    public List<ContactDTO> listContacts() {
         return iContactRepository.findAll()
                 .stream()
-                .map(Mapper::ContactToContactDetailDTO)
+                .map(Mapper::ContactToContactDTO)
                 .toList();
     }
 

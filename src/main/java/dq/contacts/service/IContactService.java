@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IContactService {
 
-    List<ContactDetailDTO>  listContacts();
+    List<ContactDTO>  listContacts();
 
     ContactDetailDTO findContactById(Integer id);
 
