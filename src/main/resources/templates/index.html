@@ -19,6 +19,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Phone Number</th>
                 <th scope="col">Email</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
@@ -27,6 +28,14 @@
                 <td th:text="${contact.name}"></td>
                 <td th:text="${contact.phoneNumber}"></td>
                 <td th:text="${contact.email}"></td>
+                <td class="text-center">
+                    <div class="container">
+                        <a th:href="@{/api/v1/contact/edit/{id}(id=${contact.id})}"
+                           class="btn btn-warning btn-sm me-3">Edit</a>
+                        <a th:href="@{/api/v1/contact/delete/{id}(id=${contact.id})}"
+                           class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+                </td>
             </tr>
             </tbody>
         </table>

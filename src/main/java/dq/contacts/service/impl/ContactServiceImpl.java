@@ -26,9 +26,9 @@ public class ContactServiceImpl implements IContactService {
     }
 
     @Override
-    public ContactDetailDTO findContactById(Integer id) {
+    public ContactDTO findContactById(Integer id) {
         return iContactRepository.findById(id)
-                .map(Mapper::ContactToContactDetailDTO)
+                .map(Mapper::ContactToContactDTO)
                 .orElseThrow(() -> new RuntimeException("Contact with ID " + id + " doesn't exist"));
     }
 

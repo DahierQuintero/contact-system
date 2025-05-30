@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header::header-section(title='Edit')}">
+</head>
+<body>
+<!--Div is from the navigation menu-->
+<div th:replace="~{fragments/navigation::navigation-section}"></div>
+
+<div class="container">
+    <div class="container text-center" style="margin:30px">
+        <h3>Edit Contact</h3>
+    </div>
+    <div class="container">
+        <form action="/api/v1/contact/edit" th:object="${contact}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required="true" th:field="*{name}">
+            </div>
+            <div class="mb-3">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required="true"
+                       th:field="*{phoneNumber}">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required="true" th:field="*{email}">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-warning btn-sm me-3">Edit</button>
+                <a href="/api/v1/contact/" class="btn btn-danger btn-sm">Back</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer::footer-fragment-page}"></div>
+</body>
+</html>

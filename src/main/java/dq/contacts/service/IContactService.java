@@ -10,7 +10,7 @@ public interface IContactService {
 
     List<ContactDTO>  listContacts();
 
-    ContactDetailDTO findContactById(Integer id);
+    ContactDTO findContactById(Integer id);
 
     ContactDetailDTO saveContact(ContactDTO contact);
 
